@@ -44,4 +44,4 @@ async function LogError(error, client, context = 'Unknown Context') {
     }
 }
 
-module.exports = LogError;
+module.exports = {LogError};
