@@ -7,9 +7,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName('level')
     .setDescription("Check a user's level")
-    .addUserOption(option =>
-      option.setName('user').setDescription('The user to check').setRequired(false)
-    ),
+    .addUserOption(option => option.setName('user').setDescription('The user to check').setRequired(false)),
 
   async execute(interaction) {
     try {
