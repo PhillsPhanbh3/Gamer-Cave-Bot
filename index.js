@@ -1,6 +1,5 @@
 const { Client, PermissionsBitField, Events } = require("discord.js");
 const { LogError } = require("./utils/LogError.js");
-const { blacklist } = require("./Schemas/blacklistuser.js");
 const { connectToDb } = require("./utils/mongoconnect.js");
 const client = new Client({ intents: ["Guilds", "GuildMembers", "GuildMessages", "GuildPresences", "DirectMessages"] });
 client.config = require("./config.json");
@@ -42,15 +41,6 @@ async function InteractionHandler(interaction, type) {
           flags: 64,
         });
 
-      const data = await blacklist.findOne({ User: interaction.user.id });
-
-      console.log(data);
-      if (data) {
-        return await interaction.reply({
-          content: `⚠️ You have been **BLACKLISTED** from using this bot!\nTo appeal, join the support server linked in my bio.`,
-          flags: 64,
-        });
-      }
     } catch (error) {
       console.error("Error checking blacklist:", error);
     }

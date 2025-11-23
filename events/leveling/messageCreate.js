@@ -1,5 +1,5 @@
 const { EmbedBuilder, ChannelType } = require('discord.js');
-const GCBLevel = require('../../Schemas.js/gcb leveling schema');
+const GCBLevel = require('../../Schemas/gcb_leveling');
 const { LogError } = require('../../utils/LogError');
 
 const cooldowns = new Set();

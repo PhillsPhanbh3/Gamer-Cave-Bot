@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-const GCBLevel = require('../../Schemas.js/gcb leveling schema');
+const GCBLevel = require('../../Schemas/gcb_leveling');
 
 module.exports = {
   data: new SlashCommandBuilder()

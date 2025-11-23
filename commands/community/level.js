@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder } = require('discord.js');
-const GCBLevel = require('../../Schemas.js/gcb leveling schema');
+const GCBLevel = require('../../Schemas/gcb_leveling');
 const { LogError } = require('../../utils/LogError');
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
 
       const currentXp = userData.xp;
       const currentLevel = userData.level;
-      const requiredXp = currentLevel * 100;
+      const requiredXp = currentLevel * 500;
       const progress = Math.floor((currentXp / requiredXp) * 100);
 
       const embed = new EmbedBuilder()
