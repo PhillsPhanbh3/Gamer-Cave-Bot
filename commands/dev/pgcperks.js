@@ -1,4 +1,4 @@
-const {SlashCommandBuilder, EmbedBuilder, PermissionsBitFiled } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const {LogError} = require('../../utils/LogError');
 
 module.exports = {
@@ -6,6 +6,8 @@ module.exports = {
     Owner: true,
     data: new SlashCommandBuilder()
     .setName('pgc-perks')
-    .setDescription('Bot & Guild Owner only command to send the guild rules')
-    
+    .setDescription('Bot & Guild Owner only command to send the guild rules'),
+    async execute(interaction) {
+        
+    }
 }

@@ -8,6 +8,7 @@ const { EmbedBuilder } = require('discord.js');
  */
 async function LogError(error, client, context = 'Unknown Context') {
     const errorChannelId = "1390707027411599391"; // Your error log channel ID
+    const developerId = "1163939796767473698"; //PhillsPhanbh3's user ID
     
     if (!errorChannelId) {
         console.error('No error channel ID configured!');
@@ -17,9 +18,7 @@ async function LogError(error, client, context = 'Unknown Context') {
     if (!client || !client.channels) {
         console.error('Client or client.channels is null. Unable to fetch error channel.');
         return;
-    }
-
-    try {
+    } try {
         const errorChannel = await client.channels.fetch(errorChannelId).catch(() => null);
         
         if (!errorChannel) {
@@ -38,7 +37,7 @@ async function LogError(error, client, context = 'Unknown Context') {
             )
             .setTimestamp();
 
-        await errorChannel.send({ embeds: [errorEmbed] });
+        await errorChannel.send({ content: `<@${developerId}>`, embeds: [errorEmbed] });
     } catch (sendError) {
         console.error('Failed to send error to logging channel:', sendError);
     }
