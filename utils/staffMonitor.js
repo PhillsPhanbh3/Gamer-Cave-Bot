@@ -11,8 +11,9 @@ function loadMessageData() {
         if (!fs.existsSync(messagePath)) fs.writeFileSync(messagePath, JSON.stringify([], null, 2));
         const raw = fs.readFileSync(messagePath, 'utf8');
         return raw.trim() ? JSON.parse(raw) : [];
-    } catch (err) {
-        console.error('Failed to load staffMessage.json, resetting...', err);
+    } catch (error) {
+        LogError(error, 'Load Staff Message Data');
+        console.error('Failed to load staffMessage.json, resetting...', error);
         fs.writeFileSync(messagePath, JSON.stringify([], null, 2));
         return [];
     }
@@ -65,8 +66,9 @@ async function updateStaffEmbed(client, forced = false) {
         }
         saveMessageData(data);
 
-    } catch (err) {
-        console.error('❌ Error updating staff embed:', err);
+    } catch (error) {
+        LogError(error, client);
+        console.error('❌ Error updating staff embed:', error);
     }
 }
 

@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { EmbedBuilder, PermissionsBitField } = require('discord.js')
+const { EmbedBuilder, PermissionsBitField } = require('discord.js');
+const { LogError } = require('../../utils/LogError');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -29,12 +30,13 @@ module.exports = {
         .setDescription(`:white_check_mark: ${kickUser.tag} has been **kicked** | ${reason}`)
 
         await kickMember.send ({ embeds: [dmEmbed] }).catch(err => {
+            LogError(err, client);
             return;
         });
 
         await kickMember.kick({ reason: reason }).catch(err => {
-            interaction.reply({ content: `${err}
-                There was an error, please report this screenshot to the support server https://discord.gg/tfSB4D4X`, flags: 64});
+            LogError(err, client);
+            interaction.reply({ content: `There was an error, please try again`, flags: 64});
         });
 
         await interaction.reply({ embeds: [embed] });
