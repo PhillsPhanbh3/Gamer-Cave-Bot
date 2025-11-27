@@ -5,6 +5,7 @@ const EMOTES = {
     idle: '<:IDLE:1408142017854177603>',
     dnd: '<:DND:1408142045406695535>',
     offline: '<:Offline:1408142171076563074>',
+    // These emotes are emotes added to the bot on discord developer portal
 };
 
 /**
