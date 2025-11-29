@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { generateStaffEmbed } = require('./staffEmbed');
 const messagePath = path.join(__dirname, '../data/staffMessage.json');
-const LogError = require('./LogError');
+const {LogError} = require('./LogError');
 const staffRoleId = '1334687755241787423';
 const staffChannelId = '1305711589231562803';
 
