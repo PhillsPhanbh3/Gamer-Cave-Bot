@@ -1,10 +1,10 @@
 const { EmbedBuilder } = require('discord.js');
 
 const EMOTES = {
-    online: '<:online:1408141985952305262>',
-    idle: '<:IDLE:1408142017854177603>',
-    dnd: '<:DND:1408142045406695535>',
-    offline: '<:Offline:1408142171076563074>',
+    online: '<:Online:1444795417182343318>',
+    idle: '<:IDLE:1444795400862306304>',
+    dnd: '<:DND:1444795386773373149>',
+    offline: '<:Offline:1444795368565899274>',
     // These emotes are emotes added to the bot on discord developer portal
 };
 
