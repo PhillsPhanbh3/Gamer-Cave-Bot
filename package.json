@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "discord.js": "^14.25.1",
+    "discord.js": "^14.26.4",
     "dotenv": "^16.6.1",
     "lodash": "^4.17.23",
     "mongoose": "^9.1.0"
